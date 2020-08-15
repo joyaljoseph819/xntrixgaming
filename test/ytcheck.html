@@ -1,0 +1,84 @@
+<html>
+<head>
+  <meta name="google-signin-client_id" content="594740169958-2udom1qjic6217fnb9fi5qi4l7a9s0hf.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="assets/js/subchecker.js"></script>
+</head>
+<body>
+  <div id="my-signin2"></div>
+  <br>
+  <a href="#" onclick="signOut()">Sign Out</a>
+  <br>
+  <a href="#" onclick="ytPerm()">YT Permission</a>
+  <br>
+  <br>
+  <button onclick="authenticate().then(loadClient)">authorize and load</button>
+  <br>
+  <button onclick="execute()">execute</button>
+  <br>
+  <a href="#" onclick="checkSub()">Check Subscribers</a>
+  <br>
+  <label id="uid"></label>
+  <label id="uname"></label>
+  <img id="uicon"></img>
+  <label id="uemail"></label> 
+  <script>
+    function onSuccess(googleUser) {
+      
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  
+      document.getElementById("uid").innerHTML = 'ID: ' + profile.getId(); // Do not send to your backend! Use an ID token instead.
+      document.getElementById("uname").innerHTML = 'Name: ' + profile.getName();
+      document.getElementById("uicon").src = profile.getImageUrl();
+      document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail(); // This is null if the 'email' scope is not present.
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email https://www.googleapis.com/auth/youtube.readonly',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+    function ytPerm() {
+      const options = new gapi.auth2.SigninOptionsBuilder();
+      options.setScope('https://www.googleapis.com/auth/youtube.readonly');
+      var auth2 = gapi.auth2.getAuthInstance();
+      googleUser = auth2.currentUser.get();
+      googleUser.grant(options).then(
+      function(success){
+        console.log(JSON.stringify({message: "success", value: success}));
+      },
+      function(fail){
+        alert(JSON.stringify({message: "fail", value: fail}));
+      }); 
+    }
+    function checkSub() {
+      if(window.scresult=="UCAzoxc0OVXWJ5aXRAcr7EdA") {
+        alert("User Is Subcribed To XNTRIX Gaming")
+      }
+      else {
+        alert("Please Subscribe To XNTRIX Gaming!!");
+      }
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
