@@ -1,0 +1,56 @@
+.hover_pointer:hover{
+	cursor:pointer;
+}
+.hideme{
+	display:none;
+}
+.abcRioButtonContentWrapper{
+	background-color:#007bff;
+}
+#my-signin2:hover .abcRioButtonContentWrapper{
+		background-color:#a3ff12;
+		color:#007bff;
+		font-weight:bold;
+}
+.abcRioButton {
+	margin-top:10px;
+}
+#logout_btn:hover{
+		color:#007bff;
+		font-weight:bold;
+}
+.theme_blue{
+	color:#007bff;
+}
+.theme_blue_bg{
+	background-color:#007bff;
+}
+.theme_green{
+	color:#a3ff12;
+}
+.theme_green_bg{
+	background-color:#a3ff12;
+}
+.f_15{
+	font-size:15px;
+}
+.f_12{
+	font-size:12px;
+}
+.glow_frame {
+  color: #007bff;
+  text-align: center;
+  -webkit-animation: glow_frame 1s ease-in-out infinite alternate;
+  -moz-animation: glow_frame 1s ease-in-out infinite alternate;
+  animation: glow_frame 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow_frame {
+  from {
+    box-shadow: 0 0 3px #007bff, 0 0 4px #007bff, 0 0 5px #a3ff12, 0 0 6px #a3ff12, 0 0 7px #a3ff12, 0 0 8px #a3ff12, 0 0 9px #a3ff12;
+  }
+  
+  to {
+    box-shadow: 0 0 5px #a3ff12, 0 0 6px #007bff, 0 0 7px #007bff, 0 0 8px #007bff, 0 0 9px #007bff, 0 0 10px #007bff, 0 0 11px #007bff;
+  }
+}
