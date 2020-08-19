@@ -263,7 +263,7 @@ body:not(.cursor-is--active) .slick-dots li {
 }
 
 .sidebar_xg_img {
-    display: block;
+    display: block;object-fit: contain;
     position: absolute;
     left: -50%;
     bottom: 0;
@@ -276,68 +276,19 @@ body:not(.cursor-is--active) .slick-dots li {
         left: 0;
         transform: none;
     }
+	.team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img{
+		height:100%;
+		width:100%;
+		object-fit: contain;
+		transform: skewX(0deg) translateX(0) !important;
+	}
+	#my-signin2{
+		transform:scale(0.8);
+	}
 }
 .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
     transform: skewX(20deg) translateX(0);
     transition: transform 0.8s ease;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-}
-/* @media (max-width: 991.98px) { */
-    /* .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img { */
-        /* transform: translateX(0); */
-    /* } */
-/* } */
-
-/* @media (max-width: 768px) { */
-    /* .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img { */
-        /* transform: translateX(-105px) scale(0.8); */
-    /* } */
-/* } */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 475px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translateX(-115px) scale(0.4);
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 475px) and (max-width: 600px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-         transform: translateX(-105px) scale(0.65);
-    }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translateX(-105px) scale(0.8);
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width: 818px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translateX(90px);
-    }
-} 
-@media only screen and (min-width: 818px) and (max-width: 858px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translateX(110px);
-    }
-} 
-@media only screen and (min-width: 858px) and (max-width: 888px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translateX(130px);
-    }
-} 
-@media only screen and (min-width: 888px) and (max-width: 922px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translateX(150px);
-    }
-} 
-@media only screen and (min-width: 922px) and (max-width: 991.98px) {
-  .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
-        transform: translate(0);
-    }
 }

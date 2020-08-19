@@ -48,8 +48,7 @@
 						<li class=""><a class="hover_pointer" href="#">About Us</a></li>                        
 						<li class=""><a class="hover_pointer" href="#">Giveaway</a></li>
 						<li class=""><a class="hover_pointer" href="#">FAQs</a></li>                        
-						<li class=""><a class="hover_pointer" href="#">Contact Us</a></li>                        
-						<li class=""><a class="hover_pointer" id="nav_login_btn">Login</a></li>      
+						<li class=""><a class="hover_pointer" href="#">Contact Us</a></li>      
                     </ul>
                 </nav>
                 <!-- Main Navigation / End --><!-- Header Actions -->
@@ -66,8 +65,8 @@
                         <!-- <svg role="img" class="df-icon df-icon--joystick"><use xlink:href="assets/img/allsvg.svg#joystick"></use></svg> -->
                         <!-- <svg role="img" class="df-icon df-icon--close"><use xlink:href="assets/img/allsvg.svg#close"></use></svg> -->
                     <!-- </div> -->
-					<div id="my-signin2"></div>
-                    <div class="header-account theme_green">
+					<div id="my-signin2" class="hideme"></div>
+                    <div id="logged_info" class="header-account theme_green">
                         <!-- <div class="header-account__avatar"><img src="assets/img/samples/account-user-avatar.jpg" srcset="assets/img/samples/account-user-avatar@2x.jpg 2x" alt="" /></div> -->
                         <div id="logged_upic_frame" class="header-account__avatar glow_frame hideme"><img id="logged_upic" alt="" /></div>
                         <div id="logged_status"class="header-account__body theme_blue f_12 mr-5 hideme">Welcome:
@@ -79,7 +78,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="header-menu-toggle">
+                    <div class="header-menu-toggle" id="menutbtn" onclick="toggle_gsb()">
                         <div class="header-menu-toggle__inner"><span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span></div>
                     </div>
                 </div>
@@ -94,7 +93,7 @@
                                 <div class="gatask_list">
 									<ul class="slick-dots" role="tablist">
 										<li class="slick-active" id="gatask1" onclick="toggle_gatask('gatask_1');">1</li>
-										<li class="gat_complete" id="gatask2" onclick="toggle_gatask('gatask_2');"></li>
+										<li class="" id="gatask2" onclick="toggle_gatask('gatask_2');">2</li>
 										<li class="" id="gatask3" onclick="toggle_gatask('gatask_3');">3</li>
 										<li class="" id="gatask4" onclick="toggle_gatask('gatask_4');">4</li>										
 									</ul>
@@ -125,7 +124,7 @@
                                                 </div>
                                                 <p>
                                                   You will be eligible to participate in the Giveaway once you have successfully completed these procedures.<br> Multiple entries from same user is valid. Ensure that you login as a new user to enroll again and increase your chance to be the winner.
-												  <p style="font-size:10px">*T&C Applies.</p>
+												  <p id="ga_tc" class="f_10 theme_green">*T&C Applies.</p>
 												 </p>
                                             </div>
                                         </div>
@@ -520,7 +519,7 @@
                         <!-- </div> -->
                     <!-- </li> -->
                     <li class="mobile-bar-item"><a class="mobile-bar-item__header" href="giveaway.html">Giveaway</a></li>
-                    <li class="mobile-bar-item"><a class="mobile-bar-item__header hideme" id="logout_btn" onclick="signOut();">Logout</a></li>
+                    <li class="mobile-bar-item"><a class="mobile-bar-item__header hideme" id="logout_btn_mob" onclick="signOut();">Logout&nbsp;&nbsp;&nbsp;<svg role="img" style="height:15px;width:15px;"class="df-icon df-icon--logout"><use xlink:href="assets/img/allsvg.svg#logout"></use></svg></a></li>
                 </ul>                
                 <div class="menu-panel__content d-none d-md-flex">
                     <div class="menu-panel__navigation">

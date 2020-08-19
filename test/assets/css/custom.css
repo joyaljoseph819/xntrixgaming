@@ -4,6 +4,9 @@
 .hideme{
 	display:none;
 }
+.hidegsb{
+	display:none;
+}
 .abcRioButtonContentWrapper{
 	background-color:#007bff;
 }
@@ -19,23 +22,29 @@
 		color:#007bff;
 		font-weight:bold;
 }
+#ga_tc:hover{
+	color:#007bff !important;
+}
 .theme_blue{
-	color:#007bff;
+	color:#007bff !important;
 }
 .theme_blue_bg{
-	background-color:#007bff;
+	background-color:#007bff !important;
 }
 .theme_green{
-	color:#a3ff12;
+	color:#a3ff12 !important;
 }
 .theme_green_bg{
-	background-color:#a3ff12;
+	background-color:#a3ff12 !important;
 }
 .f_15{
-	font-size:15px;
+	font-size:15px !important;
 }
 .f_12{
-	font-size:12px;
+	font-size:12px !important;
+}
+.f_10{
+	font-size:10px !important;
 }
 .glow_frame {
   color: #007bff;
