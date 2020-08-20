@@ -12,20 +12,33 @@
 	  }
 	  document.getElementById("logout_btn").classList.remove("hideme");
 	}
-	function onSuccess(googleUser) {      
+	function onSuccess(googleUser) {				
       var profile = googleUser.getBasicProfile();    
       // document.getElementById("logged_uid").innerHTML = 'ID: ' + profile.getId(); // Do not send to your backend! Use an ID token instead.
       document.getElementById("logged_uname").innerHTML = profile.getName();
       document.getElementById("logged_upic").src = profile.getImageUrl();
 	  document.getElementById("my-signin2").classList.add("hideme");
+	  document.getElementById("yourname").setAttribute('onkeyup','yourname_check()');
+	  document.getElementById("gat_n1").setAttribute('onclick',"toggle_gatask('gatask_2');gat_comp('gatask1')");
+	  document.getElementById("subchecker_div").classList.remove("hideme");
+	  document.getElementById("subchecker_div_login").classList.add("hideme");
+	  document.getElementById("task_dots").classList.remove("hideme");
+	  document.getElementById("task_dots_login").classList.add("hideme");
 	  document.getElementById("my-signin2").classList.add("hidegsb");
 	  document.getElementById("logout_btn_mob").classList.remove("hideme");
+	  
 	  show_log_info();
       // document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail(); // This is null if the 'email' scope is not present.
     }
     function onFailure(error) {
       console.log(error);
 	  document.getElementById("my-signin2").classList.remove("hideme");
+	  document.getElementById("my-signin2").classList.remove("hidegsb");
+	  document.getElementById("gat_n1").setAttribute('onclick',"alert('Login with google to continue');");
+	  document.getElementById("subchecker_div").classList.add("hideme");
+	  document.getElementById("subchecker_div_login").classList.remove("hideme");
+	  document.getElementById("task_dots").classList.add("hideme");
+	  document.getElementById("task_dots_login").classList.remove("hideme");
     }
     function renderButton() {
       gapi.signin2.render('my-signin2', {
@@ -48,6 +61,12 @@
       document.getElementById("logged_upic").src = "";
 	  document.getElementById("logout_btn_mob").classList.add("hideme");
 	  document.getElementById("my-signin2").classList.remove("hideme");
+	  document.getElementById("gat_n1").setAttribute('onclick',"alert('Login with google to continue');");
+	  document.getElementById("subchecker_div").classList.add("hideme");
+	  document.getElementById("subchecker_div_login").classList.remove("hideme");
+	  document.getElementById("task_dots").classList.add("hideme");
+	  document.getElementById("task_dots_login").classList.remove("hideme");
+	  $("#my-signin2").toggleClass("hidegsb");
     }
     function ytPerm() {
       const options = new gapi.auth2.SigninOptionsBuilder();
@@ -56,19 +75,12 @@
       googleUser = auth2.currentUser.get();
       googleUser.grant(options).then(
       function(success){
-        console.log(JSON.stringify({message: "success", value: success}));
+        authenticate().then(loadClient);
+		checkSub();
       },
       function(fail){
         alert(JSON.stringify({message: "fail", value: fail}));
       }); 
-    }
-    function checkSub() {
-      if(window.scresult=="UCAzoxc0OVXWJ5aXRAcr7EdA") {
-        alert("User Is Subcribed To XNTRIX Gaming")
-      }
-      else {
-        alert("Please Subscribe To XNTRIX Gaming!!");
-      }
     }
 function mqf(mq) {
   if (mq.matches) { // If media query matches

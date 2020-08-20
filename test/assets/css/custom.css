@@ -63,3 +63,29 @@
     box-shadow: 0 0 5px #a3ff12, 0 0 6px #007bff, 0 0 7px #007bff, 0 0 8px #007bff, 0 0 9px #007bff, 0 0 10px #007bff, 0 0 11px #007bff;
   }
 }
+.btn-youtube {
+    color: #fff;
+    background-color: red;
+}
+.btn-check {
+    color: #212529;
+    background-color: #a3ff12;
+}
+.btn-check:hover {
+    background-color: #88df00;
+}
+.whiteinput{
+	color:#fff !important;
+}
+.whiteinput::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff !important;
+}
+.whiteinput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff !important;
+}
+.whiteinput::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff !important;
+}
+.whiteinput:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #fff !important;
+}
