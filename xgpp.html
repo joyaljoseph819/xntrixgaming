@@ -29,8 +29,12 @@
         <!-- Custom CSS-->
         <link href="assets/css/custom.css" rel="stylesheet" />
     </head>
-
-    <body class="site-layout--landing preloader-is--active bg-image bg-fixed bg--texture-05" style="overflow:hidden;">
+<style>
+body::-webkit-scrollbar { width: 0 !important }
+body{ overflow: -moz-scrollbars-none; }
+body{ -ms-overflow-style: none; }
+</style>
+    <body class="site-layout--landing preloader-is--active bg-image bg-fixed bg--texture-05">
         <div class="site-wrapper">
             <!-- Header
 		================================================== -->
@@ -271,6 +275,7 @@ Should the changes affect processing activities performed on the basis of the Us
 															<div class="player-info-detail__title f_12">Legal information</div>
 															<br><p>This privacy statement has been prepared based on provisions of multiple legislations, including Art. 13/14 of Regulation (EU) 2016/679 (General Data Protection Regulation).</p>
 															<br><p>This privacy policy relates solely to this Application, if not stated otherwise within this document.</p>
+															<br><br>
 														</div>
                                                     </div>		
                                                 </div>												
