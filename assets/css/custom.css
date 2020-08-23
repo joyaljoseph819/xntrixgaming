@@ -13,6 +13,16 @@
 .abcRioButtonContentWrapper{
 	background-color:#007bff;
 }
+.ppdiv{
+	 margin:auto;
+	 width:50%;
+}
+@media (max-width: 991.98px) {
+	.ppdiv{
+		margin:auto;
+		width:100%;
+	}	
+}
 .hidescroll
 {
 	overflow:auto !important;
