@@ -13,6 +13,32 @@
 .abcRioButtonContentWrapper{
 	background-color:#007bff;
 }
+.hidescroll
+{
+	overflow:auto !important;
+}
+.hidescroll::-webkit-scrollbar-track
+{
+	cursor:pointer !important;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.hidescroll::-webkit-scrollbar
+{
+	cursor:pointer !important;
+	width: 5px;
+	background-color: transparent;
+}
+
+.hidescroll::-webkit-scrollbar-thumb
+{
+	cursor:pointer !important;
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #a3ff12;
+}
 #ga_iid{
 	text-transform: lowercase !important; 
 }
