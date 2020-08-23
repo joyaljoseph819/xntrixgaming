@@ -271,6 +271,31 @@ body:not(.cursor-is--active) .slick-dots li {
     height: 100%;
     transition: none;
 }
+@media (max-width: 767.98px) {
+	#subscribe_btn{
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.modal-dialog {
+		left:55% !important;
+	}
+}
+@media (max-width: 991.98px) and (min-width: 768px) {
+	#subscribe_btn{
+		margin-left:-120px;
+	}
+}
+@media (max-width: 1199.98px) and (min-width: 992px) {
+	#subscribe_btn{
+		margin-left:auto;
+		margin-right:auto;
+	}	
+}
+@media (min-width: 1200px) {
+	#subscribe_btn{
+		margin-left:-100px;
+	}
+}
 @media (max-width: 991.98px) {
     .sidebar_xg_img {
         left: 0;
@@ -284,7 +309,7 @@ body:not(.cursor-is--active) .slick-dots li {
 	}
 	#my-signin2{
 		transform:scale(0.8);
-	}
+	}	
 }
 .team-player__slide.slick-current .team-player__slide-inner .sidebar_xg_img {
     transform: skewX(20deg) translateX(0);

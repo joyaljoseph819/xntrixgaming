@@ -2477,7 +2477,7 @@
                 onLinkClick: function (t, e) {
                     return !1;
                 },
-                backLabel: '<svg role="img" class="df-icon df-icon--left-arrow"><use xlink:href="/assets/img/allsvg.svg#left-arrow"></use></svg> Back',
+                backLabel: '<svg role="img" class="df-icon df-icon--left-arrow"><use xlink:href="assets/img/allsvg.svg#left-arrow"></use></svg> Back',
                 useActiveItemAsBackLabel: !1,
                 useActiveItemAsLink: !1,
                 resetOnClose: !0,

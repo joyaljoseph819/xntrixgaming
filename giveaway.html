@@ -43,11 +43,11 @@
                 <!-- Logo - Image Based / End --><!-- Main Navigation -->
                 <nav class="main-nav">
                     <ul class="main-nav__list">
-						<li class=""><a class="hover_pointer" href="home.html">Home</a></li>                        
-						<li class=""><a class="hover_pointer" href="#">About Us</a></li>                        
+						<li class=""><a class="hover_pointer" href="index.html">Home</a></li>                        
+						<!-- <li class=""><a class="hover_pointer" href="#">About Us</a></li>                         -->
 						<li class=""><a class="hover_pointer" href="#">Giveaway</a></li>
-						<li class=""><a class="hover_pointer" href="#">FAQs</a></li>                        
-						<li class=""><a class="hover_pointer" href="#">Contact Us</a></li>      
+						<!-- <li class=""><a class="hover_pointer" href="#">FAQs</a></li>                         -->
+						<!-- <li class=""><a class="hover_pointer" href="#">Contact Us</a></li>       -->
                     </ul>
                 </nav>
                 <!-- Main Navigation / End --><!-- Header Actions -->
@@ -97,10 +97,10 @@
 										<li class="" id="gatask4">4</li>										
 									</ul>
 									<ul id="task_dots_login" class="slick-dots" role="tablist">
-										<li class="slick-active" onclick="alert('login with google to continue');">1</li>
-										<li class="" onclick="alert('login with google to continue');">2</li>
-										<li class="" onclick="alert('login with google to continue');">3</li>
-										<li class="" onclick="alert('login with google to continue');">4</li>										
+										<li class="slick-active" onclick="openmodale('Please Login With Google To Continue');">1</li>
+										<li class="" onclick="openmodale('Please Login With Google To Continue');">2</li>
+										<li class="" onclick="openmodale('Please Login With Google To Continue');">3</li>
+										<li class="" onclick="openmodale('Please Login With Google To Continue');">4</li>										
 									</ul>
                                     <div class="team-carousel__item" data-icon="team-overview">
                                         <div class="row" id="gatask_1">
@@ -128,13 +128,16 @@
                                                     </div>
 													<div class="col-6 col-md-6 col-xl-4">
                                                         <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="yourname_div">Your Name</div>
-															<input class="form-control whiteinput" id="yourname"></input>
+                                                            <div class="player-info-detail__title" id="yourname_div">Enter Your Name</div>
+															<input class="form-control whiteinput" id="yourname" onkeyup="yourname_check_login()"></input>
                                                         </div>
                                                     </div>
 													<div class="col-6 col-md-6 col-xl-4">														
                                                         <div id="gat_n1" class="player-info-detail hideme">
-                                                            <button class="btn btn-check">Next</button>
+                                                            <button class="btn btn-check" onclick="toggle_gatask('gatask_2');gat_comp('gatask1')">Next</button>
+                                                        </div>
+														<div id="gat_n1_login" class="player-info-detail hideme">
+                                                            <button class="btn btn-check" onclick="openmodale('Please Login With Google To Continue');">Next</button>
                                                         </div>
                                                     </div>
 													<p>
@@ -222,15 +225,15 @@
                                                         </div>
                                                     </div>
 													<div id="subchecker_div_login" class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                         <button class="btn btn-check" onclick="alert('Login with youtube to continue')">Check!</button>
+                                                         <button class="btn btn-check" onclick="openmodale('Please Login With Google To Continue');">Check!</button>
                                                     </div>
 													<div id="subchecker_div" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="ytPerm()" id="subchecker_btn">Check!</button>
+                                                         <button class="btn btn-check" onclick="ytPerm()" id="subchecker_btn"><i id="subcheck_i" class="f_10 fa fa-spinner fa-spin checking"></i><span id="subcheck_s">Check!</button>
                                                     </div>
 													<div id="gat_n3" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
                                                          <button class="btn btn-check" onclick="toggle_gatask('gatask_4');gat_comp('gatask4');gat_res();">Next</button>
                                                     </div>
-													<div id="subscribe_btn" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme" style="margin-left:-100px;z-index:10;">
+													<div id="subscribe_btn" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme" style="z-index:10;">
                                                          <button class="btn btn-youtube" onclick="window.open('https://www.youtube.com/channel/UCAzoxc0OVXWJ5aXRAcr7EdA')"><i class="fab fa-youtube"></i>Subscribe</button>
                                                     </div>
 												</div>
@@ -247,7 +250,7 @@
                                                             <div class="match-score">
                                                                 <div class="match-score__header">
                                                                     <div class="match-score__competition">If any information given was wrong please do immediately mail us at <a href="mailto:#" class="whiteinput">giveaway<span class="color-primary">@</span>xntrixgaming.online</a></div>
-                                                                    <div class="match-score__date">Giveaway Token ID : </div>
+                                                                    <div class="match-score__date">Giveaway Token ID : <span id="ga_tid" class="color-primary"></span></div>
                                                                 </div>
                                                                 <div class="match-score__body">
                                                                     <div class="player-info-detail">
@@ -397,105 +400,42 @@
                         <div id="dl-menu" class="dl-menuwrapper">
                             <!-- <button class="dl-trigger">Open Menu</button> -->
                             <ul class="dl-menu dl-menuopen">
-                                <li class=""><a href="home.html">Home</a></li>
+                                <li class=""><a href="index.html">Home</a></li>
                                 <li class="">
-                                    <a href="team-selection-2.html">Teams</a>
-                                    <ul class="dl-submenu">
-                                        <li class="">
-                                            <a href="#">Team Selections</a>
-                                            <ul class="dl-submenu">
-                                                <li class=""><a href="team-selection-1.html">Team Selection v1</a></li>
-                                                <li class=""><a href="team-selection-2.html">Team Selection v2</a></li>
-                                                <li class=""><a href="team-selection-3.html">Team Selection v3</a></li>
-                                                <li class=""><a href="team-selection-4.html">Team Selection v4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="active">
-                                            <a href="team-overview.html">Team Overview</a>
-                                            <ul class="dl-submenu">
-                                                <li class=""><a href="team-overview.html">Team Overview v1</a></li>
-                                                <li class="active"><a href="team-overview-2.html">Team Overview v2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class=""><a href="team-player-1.html">Player Page</a></li>
+                                    <a href="team-selection-2.html">Social Medias</a>
+                                    <ul class="dl-submenu">                                        
+                                        <li>
+											<i class="fab fa-facebook-square theme_green"></i><a href="https://www.facebook.com/Xntrix-Gaming-116659106652913/" target="_blank"><span>&nbsp;Facebook</span></a>
+										</li>
+										<li>
+											<i class="fab fa-instagram theme_green"></i><a href="https://www.instagram.com/xntrixgaming/" target="_blank"><span>&nbsp;Instagram</span></a>
+										</li>
+										<li>
+											<i class="fab fa-youtube theme_green"></i><a href="https://www.youtube.com/channel/UCAzoxc0OVXWJ5aXRAcr7EdA" target="_blank"><span>&nbsp;Youtube</span></a>
+										</li>
                                     </ul>
                                 </li>
-                                <li class="">
-                                    <a href="#">Matches</a>
-                                    <ul class="dl-submenu">
-                                        <li class=""><a href="matches-scores.html">Match Scores</a></li>
-                                        <li class=""><a href="matches-upcoming.html">Upcoming Matches</a></li>
-                                        <li class=""><a href="matches-standings.html">Standings</a></li>
-                                        <li class="">
-                                            <a href="#">Match Stats</a>
-                                            <ul class="dl-submenu">
-                                                <li class=""><a href="matches-stats-1.html">Match Stats v1</a></li>
-                                                <li class=""><a href="matches-stats-2.html">Match Stats v2</a></li>
-                                                <li class=""><a href="matches-stats-3.html">Match Stats v3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="">
-                                            <a href="#">Match Lineups</a>
-                                            <ul class="dl-submenu">
-                                                <li class=""><a href="matches-lineups-1.html">Match Lineups v1</a></li>
-                                                <li class=""><a href="matches-lineups-2.html">Match Lineups v2</a></li>
-                                                <li class=""><a href="matches-lineups-3.html">Match Lineups v3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="">
-                                            <a href="#">Match Overviews</a>
-                                            <ul class="dl-submenu">
-                                                <li class=""><a href="matches-overview-1.html">Match Overview v1</a></li>
-                                                <li class=""><a href="matches-overview-2.html">Match Overview v2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class=""><a href="matches-replay.html">Match Replay</a></li>
-                                    </ul>
-                                </li>
-                                <li class=""><a href="blog-1.html">News</a></li>
-                                <li>
-                                    <a href="#">Features</a>
-                                    <ul class="dl-submenu dl-megamenu">
-                                        <div class="row">
-                                            <ul class="col-md-6 col-lg-4">
-                                                <li class=""><a href="index.html">Landing Image</a></li>
-                                                <li class=""><a href="index-2.html">Landing Video</a></li>
-                                                <li class=""><a href="home.html">Home page</a></li>
-                                                <li class=""><a href="blog-1.html">News v1</a></li>
-                                                <li class=""><a href="blog-2.html">News v2</a></li>
-                                                <li class=""><a href="blog-3.html">News v3</a></li>
-                                                <li class=""><a href="blog-4.html">News v4</a></li>
-                                                <li class=""><a href="blog-post.html">Post Page</a></li>
-                                                <li class=""><a href="shop-account-settings.html">Account Settings</a></li>
-                                            </ul>
-                                            <ul class="col-md-6 col-lg-4">
-                                                <li class=""><a href="shop-account-orders.html">Account Orders</a></li>
-                                                <li class=""><a href="login-register.html">Login & Register</a></li>
-                                                <li class=""><a href="features-about-us.html">About Us</a></li>
-                                                <li class=""><a href="features-faqs.html">FAQs</a></li>
-                                                <li class=""><a href="features-contact-us.html">Contact Us</a></li>
-                                                <li class=""><a href="management-and-staff.html">Management & Staff</a></li>
-                                                <li class=""><a href="streams-archive.html">Streams Page</a></li>
-                                                <li class=""><a href="partners.html">Our Partners</a></li>
-                                            </ul>
-                                            <ul class="col-md-12 col-lg-4">
-                                                <li class=""><a href="features-shortcodes.html">Shortcodes</a></li>
-                                                <li class=""><a href="features-typography.html">Typography</a></li>
-                                                <li class="">
-                                                    <a href="features-icons.html">Icons <span class="badge badge-danger">New</span></a>
-                                                </li>
-                                                <li class=""><a href="features-bg-1.html">Backgrounds</a></li>
-                                            </ul>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="">
-                                    <a href="shop.html">Shop</a>
-                                    <ul class="dl-submenu">
-                                        <li class=""><a href="shop.html">Shop Page v1</a></li>
-                                        <li class=""><a href="shop-2.html">Shop Page v2</a></li>
-                                        <li class=""><a href="shop-product.html">Product Page</a></li>
-                                        <li class=""><a href="shop-checkout.html">Checkout Page</a></li>
+								<!-- <li class=""><a href="index.html">About Us</a></li> -->
+								<!-- <li class=""><a href="index.html">Giveaway</a></li> -->
+								<!-- <li class=""><a href="index.html">FAQs</a></li> -->
+								<!-- <li class=""><a href="index.html">Contact Us</a></li> -->
+								<li class="">
+                                    <a href="team-selection-2.html">Share Page</a>
+                                    <ul class="dl-submenu">                                        
+                                        <li>
+											<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://www.xntrixgaming.online" data-a2a-title="XNTRIX Gaming">
+												<a class="a2a_button_whatsapp"></a>
+												<a class="a2a_button_copy_link"></a>
+												<a class="a2a_button_facebook"></a>
+												<a class="a2a_button_telegram"></a>
+												<a class="a2a_button_twitter"></a>
+												<a class="a2a_button_google_gmail"></a>
+												<a class="a2a_button_email"></a>
+												<a class="a2a_button_linkedin"></a>
+												<a class="a2a_button_sms"></a>
+											</div>
+											<script async src="https://static.addtoany.com/menu/page.js"></script>
+										</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -544,12 +484,6 @@
                                                 <a href="mailto:#">support<span class="color-primary">@</span>xntrixgaming.online</a>
                                             </div>
                                         </div>
-                                        <ul class="social-menu social-menu--default">
-                                            <li><a href="danfisher.dev/index.htm"></a></li>
-                                            <li><a href="danfisher_dev.html"></a></li>
-                                            <li><a href="index-1.htm"></a></li>
-                                            <li><a href="invite/xxxx.html"></a></li>
-                                        </ul>
                                     </div>
                                 </section>
                                 <!-- Widget: Contact Info / End -->
@@ -558,19 +492,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- Widget: Partners Carousel -->
-                                <section class="widget widget-partners-carousel">
-                                    <h5 class="widget__title">Our Partners</h5>
-                                    <div class="widget__content">
-                                        <ul>
-                                            <li><img src="assets/img/samples/partner-carousel-img-01.png" alt="" /></li>
-                                            <li><img src="assets/img/samples/partner-carousel-img-02.png" alt="" /></li>
-                                            <li><img src="assets/img/samples/partner-carousel-img-03.png" alt="" /></li>
-                                            <li><img src="assets/img/samples/partner-carousel-img-01.png" alt="" /></li>
-                                            <li><img src="assets/img/samples/partner-carousel-img-02.png" alt="" /></li>
-                                            <li><img src="assets/img/samples/partner-carousel-img-03.png" alt="" /></li>
-                                        </ul>
-                                    </div>
-                                </section>
+                                <!-- <section class="widget widget-partners-carousel"> -->
+                                    <!-- <h5 class="widget__title">Our Clan Members</h5> -->
+                                    <!-- <div class="widget__content"> -->
+                                        <!-- <ul> -->
+                                            <!-- <li><img src="assets/img/samples/.png" alt="" /></li> -->
+                                        <!-- </ul> -->
+                                    <!-- </div> -->
+                                <!-- </section> -->
                                 <!-- Widget: Partners Carousel / End -->
                             </div>
                         </div>
@@ -589,6 +518,22 @@
         </div>
         <!-- The cursor elements -->
         <div class="df-custom-cursor-wrap"><div id="df-custom-cursor"></div></div>
+		<!-- MODAL ELEMENTS -->
+		<div class="modale" id="modale"aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-header">
+					<div class="header-logo header-logo--img">
+						<a href="index.html"><img src="assets/img/xglogo.png" srcset="assets/img/xglogo@2x.png 2x" alt="xntrixgaming" height="50px"></a>
+					</div>					
+				</div>
+				<div class="modal-body">
+					<h2 id="modal_msg"></h2>
+				</div>
+					<div class="modal-footer">
+					<button class="btn btn-check closemodale">OK</button>
+				</div>
+			</div>
+		</div>
         <!-- Javascript Files
 	================================================== --><!-- Core JS -->
         <script src="assets/vendor/jquery/jquery.min.js"></script>

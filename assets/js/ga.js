@@ -15,10 +15,63 @@ function gat_comp(id){
 		document.getElementById(id).classList.add('gat_complete');
 	}
 }
-function gat_res(id){
-	document.getElementById("ga_name").innerHTML = document.getElementById("yourname").value;
-	document.getElementById("ga_pid").innerHTML = document.getElementById("pid").value;
-	document.getElementById("ga_iid").innerHTML = document.getElementById("iid").value;
+function gat_res(){
+	var http = new XMLHttpRequest();
+		var fn = document.getElementById("yourname").value;
+		var i = document.getElementById("iid").value;
+		var p = document.getElementById("pid").value;
+        http.open("GET", "../process/ga_enroll.php?id="+window.id+"&gn="+window.gn+"&fn="+fn+'&i='+i+'&p='+p, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.onreadystatechange = function()
+        {
+            if(http.readyState == 4 && http.status == 200) {
+				enrollment(window.id,'success');
+			}
+		}
+        http.send();	
+}
+function enrollment(id,type){
+	var http1 = new XMLHttpRequest();
+        http1.open("POST", '../process/check_enroll.php?id='+id, true);
+        http1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http1.onreadystatechange = function()
+        {
+            if(http1.readyState == 4 && http1.status == 200) {
+				if(JSON.parse(http1.responseText)[0].localeCompare((JSON.parse(http1.responseText)[1]))){
+					var bids = ['gatask1','gatask2','gatask3','gatask4'];
+					for(item in bids){
+						gat_comp(bids[item]);
+						toggle_gatask('gatask_4');
+					}
+					document.getElementById("gatask1").setAttribute('onclick',"");
+					if(type=="login")
+					{
+						openmodale("Hello "+window.gn+'! <br>You are already enrolled!!');
+					}
+					else if(type=="success"){
+						openmodale('Congrats '+window.gn+'! <br> You are Enrolled!');
+					}
+					var http2 = new XMLHttpRequest();
+						http2.open("GET", '../process/enroll_det.php?id='+id, true);
+						http2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+						http2.onreadystatechange = function()
+						{
+							if(http2.readyState == 4 && http2.status == 200) {
+								document.getElementById("ga_name").innerHTML = JSON.parse(http2.responseText)[0]["n"];
+								document.getElementById("ga_pid").innerHTML = JSON.parse(http2.responseText)[0]["p"];
+								document.getElementById("ga_iid").innerHTML = "@"+JSON.parse(http2.responseText)[0]["i"];
+								document.getElementById("ga_tid").innerHTML = JSON.parse(http2.responseText)[0]["t"];
+								if(type=="success"){
+									openmodale('Your Giveaway Token ID is <br>'+JSON.parse(http2.responseText)[0]["t"]);
+								}
+							}
+						}
+						http2.send();
+				}
+				
+			}
+		}
+        http1.send();
 }
 function live_fc(){
         var http1 = new XMLHttpRequest();
@@ -51,11 +104,25 @@ function yourname_check(){
 	{
 		document.getElementById("yourname_div").classList.add("color-primary");
 		document.getElementById("gat_n1").classList.remove("hideme");
+		document.getElementById("gat_n1_login").classList.add("hideme");
 	}
 	else
 	{
 		document.getElementById("yourname_div").classList.remove("color-primary");
 		document.getElementById("gat_n1").classList.add("hideme");
+	}
+}
+function yourname_check_login(){
+	var yourname = document.getElementById("yourname");	
+	if(yourname.value!="")
+	{
+		document.getElementById("yourname_div").classList.add("color-primary");
+		document.getElementById("gat_n1_login").classList.remove("hideme");
+	}
+	else
+	{
+		document.getElementById("yourname_div").classList.remove("color-primary");
+		document.getElementById("gat_n1_login").classList.add("hideme");
 	}
 }
 function id_check(){
@@ -96,8 +163,19 @@ function checkSub() {
 	}
     else {
 		document.getElementById("f_query1").innerHTML = "Oops!!You Are Not a";
-        document.getElementById("f_query2").innerHTML = "Subscriber";
-        document.getElementById("subchecker_btn").innerHTML = "Check Again";
+        document.getElementById("f_query2").innerHTML = "Subscriber";			
+        document.getElementById("subcheck_s").innerHTML = "Check Again";
+		document.getElementById("subcheck_i").classList.add("checking");
+		document.getElementById("subchecker_btn").setAttribute("onclick","ytPerm()");
         document.getElementById("subscribe_btn").classList.remove("hideme");
     }
+}
+function reset_gaentry(){
+	document.getElementById("yourname").value="";
+	document.getElementById("pid").value="";
+	document.getElementById("iid").value="";
+	document.getElementById("ga_name").innerHTML="";
+	document.getElementById("ga_pid").innerHTML="";
+	document.getElementById("ga_iid").innerHTML="";
+	document.getElementById("ga_tid").innerHTML="";
 }
