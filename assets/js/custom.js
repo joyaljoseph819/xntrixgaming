@@ -21,29 +21,15 @@
       document.getElementById("logged_uname").innerHTML = profile.getName();
       document.getElementById("logged_upic").src = profile.getImageUrl();
 	  document.getElementById("my-signin2").classList.add("hideme");
-	  document.getElementById("yourname").setAttribute('onkeyup','yourname_check()');
-	  document.getElementById("subchecker_div").classList.remove("hideme");
-	  document.getElementById("subchecker_div_login").classList.add("hideme");
-	  document.getElementById("task_dots").classList.remove("hideme");
-	  document.getElementById("task_dots_login").classList.add("hideme");
 	  document.getElementById("logout_btn_mob").classList.remove("hideme");
-	  $("#my-signin2").toggleClass("hidegsb");	
-	  reset_gaentry();
+	  $("#my-signin2").toggleClass("hidegsb");	  
 	  show_log_info();	  
-	  enrollment(profile.getId(),'login');
       // document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail(); // This is null if the 'email' scope is not present.
     }
     function onFailure(error) {
       console.log(error);
 	  document.getElementById("my-signin2").classList.remove("hideme");
 	  document.getElementById("my-signin2").classList.remove("hidegsb");
-	  document.getElementById("yourname").setAttribute('onkeyup','yourname_check_login()');
-	  document.getElementById("gat_n1").classList.add("hideme");
-	  document.getElementById("subchecker_div").classList.add("hideme");
-	  document.getElementById("subchecker_div_login").classList.remove("hideme");
-	  document.getElementById("task_dots").classList.add("hideme");
-	  document.getElementById("task_dots_login").classList.remove("hideme");
-	  toggle_gatask('gatask_1');
     }
     function renderButton() {
       gapi.signin2.render('my-signin2', {
@@ -68,31 +54,7 @@
       document.getElementById("logged_upic").src = "";
 	  document.getElementById("logout_btn_mob").classList.add("hideme");
 	  document.getElementById("my-signin2").classList.remove("hideme");
-	  document.getElementById("yourname").setAttribute('onkeyup','yourname_check_login()');
-	  document.getElementById("gat_n1").classList.add("hideme");
-	  document.getElementById("subchecker_div").classList.add("hideme");
-	  document.getElementById("subchecker_div_login").classList.remove("hideme");
-	  document.getElementById("task_dots").classList.add("hideme");
-	  document.getElementById("task_dots_login").classList.remove("hideme");
 	  $("#my-signin2").toggleClass("hidegsb");
-	  reset_gaentry();
-	  toggle_gatask('gatask_1');
-    }
-    function ytPerm() {			
-        document.getElementById("subcheck_s").innerHTML = "Checking";
-		document.getElementById("subcheck_i").classList.remove("checking");
-		document.getElementById("subchecker_btn").setAttribute("onclick","");
-      const options = new gapi.auth2.SigninOptionsBuilder();
-      options.setScope('https://www.googleapis.com/auth/youtube.readonly');
-      var auth2 = gapi.auth2.getAuthInstance();
-      googleUser = auth2.currentUser.get();
-      googleUser.grant(options).then(
-      function(success){
-        authenticate().then(loadClient);
-      },
-      function(fail){
-        alert(JSON.stringify({message: "fail", value: fail}));
-      }); 
     }
 function mqf(mq) {
   if (mq.matches) { // If media query matches
