@@ -30,7 +30,7 @@
 	  $("#my-signin2").toggleClass("hidegsb");	
 	  reset_gaentry();
 	  show_log_info();	  
-	  enrollment(profile.getId(),'login');
+	  // enrollment(profile.getId(),'login');
       // document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail(); // This is null if the 'email' scope is not present.
     }
     function onFailure(error) {
@@ -143,30 +143,12 @@ function gat_comp(id){
 	}
 }
 function gat_res(){
-	
-				enrollment(window.id,'success');
-}
-function enrollment(id,type){
-           
-				if(true){
-					var bids = ['gatask1','gatask2','gatask3','gatask4'];
-					for(item in bids){
-						gat_comp(bids[item]);
-						toggle_gatask('gatask_4');
-					}
-					document.getElementById("gatask1").setAttribute('onclick',"");
-					if(type=="login")
-					{
-						openmodale("Hello "+window.gn+'! <br>You are already enrolled!!');
-					}
-					else if(type=="success"){
-						openmodale('Congrats '+window.gn+'! <br> You are Enrolled!');
-					}
-					document.getElementById("ga_name").innerHTML = document.getElementById("yourname").innerHTML;
+	document.getElementById("ga_name").innerHTML = document.getElementById("yourname").innerHTML;
 					document.getElementById("ga_pid").innerHTML = document.getElementById("pid").innerHTML;
 					document.getElementById("ga_iid").innerHTML = document.getElementById("iid").innerHTML;
-				}
-		}
+}
+function enrollment(id,type){
+}
 function live_fc(){
         var http1 = new XMLHttpRequest();
         http1.open("GET", _0xb03eda41041ff80, true);
