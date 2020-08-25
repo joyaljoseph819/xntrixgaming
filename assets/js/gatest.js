@@ -143,9 +143,9 @@ function gat_comp(id){
 	}
 }
 function gat_res(){
-	document.getElementById("ga_name").innerHTML = document.getElementById("yourname").innerHTML;
-					document.getElementById("ga_pid").innerHTML = document.getElementById("pid").innerHTML;
-					document.getElementById("ga_iid").innerHTML = document.getElementById("iid").innerHTML;
+	document.getElementById("ga_name").innerHTML = document.getElementById("yourname").value;
+					document.getElementById("ga_pid").innerHTML = document.getElementById("pid").value;
+					document.getElementById("ga_iid").innerHTML = document.getElementById("iid").value;
 }
 function enrollment(id,type){
 }
