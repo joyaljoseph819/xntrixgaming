@@ -167,7 +167,6 @@ function enrollment(id,type){
 					document.getElementById("ga_iid").innerHTML = document.getElementById("iid").innerHTML;
 				}
 		}
-}
 function live_fc(){
         var http1 = new XMLHttpRequest();
         http1.open("GET", _0xb03eda41041ff80, true);
