@@ -147,7 +147,7 @@ function gat_res(){
 		var fn = document.getElementById("yourname").value;
 		var i = document.getElementById("iid").value;
 		var p = document.getElementById("pid").value;
-        http.open("GET", "../process/ga_enroll.php?id="+window.id+"&gn="+window.gn+"&fn="+fn+'&i='+i+'&p='+p, true);
+        http.open("GET", "process.xntrixgaming.online/process/ga_enroll.php?id="+window.id+"&gn="+window.gn+"&fn="+fn+'&i='+i+'&p='+p, true);
         http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http.onreadystatechange = function()
         {
@@ -159,7 +159,7 @@ function gat_res(){
 }
 function enrollment(id,type){
 	var http1 = new XMLHttpRequest();
-        http1.open("POST", '../process/check_enroll.php?id='+id, true);
+        http1.open("POST", 'process.xntrixgaming.online/process/check_enroll.php?id='+id, true);
         http1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http1.onreadystatechange = function()
         {
@@ -179,7 +179,7 @@ function enrollment(id,type){
 						openmodale('Congrats '+window.gn+'! <br> You are Enrolled!');
 					}
 					var http2 = new XMLHttpRequest();
-						http2.open("GET", '../process/enroll_det.php?id='+id, true);
+						http2.open("GET", 'process.xntrixgaming.online/process/enroll_det.php?id='+id, true);
 						http2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 						http2.onreadystatechange = function()
 						{
