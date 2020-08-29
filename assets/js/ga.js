@@ -31,7 +31,7 @@
 	  reset_gaentry();
 	  show_log_info();	  
 	  enrollment(profile.getId(),'login');
-      // document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail(); // This is null if the 'email' scope is not present.
+      // document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail();
     }
     function onFailure(error) {
       console.log(error);
