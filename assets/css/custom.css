@@ -1,3 +1,6 @@
+.bgwhite{
+	background-color: #fff;
+}
 .hover_pointer:hover{
 	cursor:pointer;
 }
@@ -131,6 +134,15 @@
   to {
     text-shadow: 0 0 8px #4333F8, 0 0 9px #007bff, 0 0 10px #007bff, 0 0 11px #007bff, 0 0 12px #007bff, 0 0 13px #007bff, 0 0 14px #007bff;
   }
+}
+.yt {
+	color: red !important;
+}
+.ig {
+	font-style:strong;
+	background: -webkit-linear-gradient(#fcb045, #fd1d1d, #833ab4);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 .btn-youtube {
     color: #fff;
