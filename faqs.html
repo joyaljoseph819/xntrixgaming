@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zxx">  
     <head>
         <!-- Basic Page Needs
@@ -31,7 +31,7 @@
         <link href="assets/css/custom.css" rel="stylesheet" />
     </head>
 
-    <body class="preloader-is--active bg-image bg-fixed bg--texture-01 bg--dotted-3x3">
+   <body class="site-layout--horizontal preloader-is--active">
         <div class="site-wrapper site-layout--default">
             <!-- Header
 		================================================== -->
@@ -43,10 +43,10 @@
                 <!-- Logo - Image Based / End --><!-- Main Navigation -->
                 <nav class="main-nav">
                     <ul class="main-nav__list">
-						<li class=""><a class="hover_pointer" href="home.html">Home</a></li>                        
+						<li class=""><a class="hover_pointer" href="index.html">Home</a></li>                        
 						<!-- <li class=""><a class="hover_pointer" href="#">About Us</a></li>                         -->
 						<li class=""><a class="hover_pointer" href="giveaway.html">Giveaway</a></li>
-						<li class=""><a class="hover_pointer" href="faq.html">FAQs</a></li>                        
+						<li class=""><a class="hover_pointer" href="#">FAQs</a></li>                        
 						<!-- <li class=""><a class="hover_pointer" href="#">Contact Us</a></li>       -->
                     </ul>
                 </nav>
@@ -71,7 +71,7 @@
                         <div id="logged_status"class="header-account__body theme_blue f_12 mr-5 hideme">Welcome:
                             <div id="logged_uname" class="header-account__name theme_green f_15 hideme"></div>
                         </div>
-                        <div id="logout_btn" class="header-account__icon hideme" onclick="signOut();">                            
+                        <div id="logout_btn" class="header-account__icon hideme hover_pointer" onclick="signOut();">                            
                             <a class="header-account__name hideme f_15">Logout
                                 <svg role="img" class="df-icon df-icon--logout"><use xlink:href="assets/img/allsvg.svg#logout"></use></svg>
                             </a>
@@ -85,221 +85,104 @@
             </header>
             <!-- Header / End --><!-- Content
 		================================================== -->
-            <main class="site-content team-info-page" id="wrapper">
-                <div class="container container--large">
-                    <div class="row">
-                        <div class="col-lg-7">                            
-                                <div class="gatask_list">									
-									<ul id="task_dots" class="slick-dots hideme" role="tablist">
-										<li class="slick-active" id="gatask1" onclick="toggle_gatask('gatask_1');">1</li>
-										<li class="" id="gatask2">2</li>
-										<li class="" id="gatask3">3</li>
-										<li class="" id="gatask4">4</li>										
-									</ul>
-									<ul id="task_dots_login" class="slick-dots" role="tablist">
-										<li class="slick-active" onclick="openmodale('Please Login With Google To Continue');">1</li>
-										<li class="" onclick="openmodale('Please Login With Google To Continue');">2</li>
-										<li class="" onclick="openmodale('Please Login With Google To Continue');">3</li>
-										<li class="" onclick="openmodale('Please Login With Google To Continue');">4</li>										
-									</ul>
-                                    <div class="team-carousel__item" data-icon="team-overview">
-                                        <div class="row" id="gatask_1">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">ENROLL FOR FREE IN OUR</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Giveaway</h2>
-                                                <div class="row">
-                                                    <div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">
-                                                            <div class="player-info-detail__label">GAME</div>
-                                                            <div class="player-info-detail__title">PUBG MOBILE</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">
-                                                            <div class="player-info-detail__label">PRIZE</div>
-                                                            <div class="player-info-detail__title">ROYALE PASS (RP)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">
-                                                            <div class="player-info-detail__label">Prize worth	</div>
-                                                            <div class="player-info-detail__title color-primary">₹ 800 /-</div>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="yourname_div">Enter Your Name</div>
-															<input class="form-control whiteinput" id="yourname" onkeyup="yourname_check_login()"></input>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-6 col-xl-4">														
-                                                        <div id="gat_n1" class="player-info-detail hideme">
-                                                            <button class="btn btn-check" onclick="toggle_gatask('gatask_2');gat_comp('gatask1')">Next</button>
-                                                        </div>
-														<div id="gat_n1_login" class="player-info-detail hideme">
-                                                            <button class="btn btn-check" onclick="openmodale('Please Login With Google To Continue');">Next</button>
-                                                        </div>
-                                                    </div>
-													<p>
-                                                  You will be eligible to participate in the Giveaway once you have successfully completed these procedures.<br> Multiple entries from same user is valid. Ensure that you login with a new <span class="theme_green">Email ID</span> to enroll and increase your chance to be the winner. Same <span class="theme_green">Instagram ID</span> and <span class="theme_green">PUBG ID</span> can be used to enroll again.
-												  <p id="ga_tc" class="f_10 theme_green">*T&C Applies.</p>
-												 </p>
-                                                </div>                                                
-                                            </div>
-                                        </div>
-							
-										<div class="row hideme" id="gatask_2">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">Our Social Media Strength</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Live Count</h2>
-                                                <div class="row row-mb-balance">
-                                                    <div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="ig_lc1"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">INSTAGRAM</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-instagram"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="yt_lc1"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">YOUTUBE</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-youtube"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>													
-                                                </div>
-												<div class="row row-mb-balance">                                                    
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="iid_div">Instagram ID</div>
-															<input class="form-control whiteinput" id="iid" onkeyup="id_check()"></input>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="pid_div">PUBG ID</div>
-															<input class="form-control whiteinput" id="pid" onkeyup="id_check()"></input>
-                                                        </div>
-                                                    </div>
-													
-													<div id="gat_n2" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="toggle_gatask('gatask_3');gat_comp('gatask2');">Next</button>
-                                                    </div>
-												</div>
-                                            </div>
-                                        </div>
-
-										<div class="row hideme" id="gatask_3">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">You Are Our Strength Dear</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Subscribers</h2>
-                                                <div class="row row-mb-balance">
-                                                    <div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="ig_lc2"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">INSTAGRAM</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-instagram"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="yt_lc2"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">YOUTUBE</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-youtube"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>													
-                                                </div>
-												<div class="row row-mb-balance">                                                    
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                         <div class="player-info-detail">
-                                                            <div class="player-info-detail__label" id="f_query1">Are You One Of Our Valuable	</div>
-                                                            <div class="player-info-detail__title color-primary" id="f_query2">Subscriber?</div>
-                                                        </div>
-                                                    </div>
-													<div id="subchecker_div_login" class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                         <button class="btn btn-check" onclick="openmodale('Please Login With Google To Continue');">Check!</button>
-                                                    </div>
-													<div id="subchecker_div" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="ytPerm()" id="subchecker_btn"><i id="subcheck_i" class="f_10 fa fa-spinner fa-spin checking"></i><span id="subcheck_s">Check!</button>
-                                                    </div>
-													<div id="gat_n3" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="toggle_gatask('gatask_4');gat_comp('gatask4');gat_res();">Next</button>
-                                                    </div>
-													<div id="subscribe_btn" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme" style="z-index:10;">
-                                                         <button class="btn btn-youtube" onclick="window.open('https://www.youtube.com/channel/UCAzoxc0OVXWJ5aXRAcr7EdA')"><i class="fab fa-youtube"></i>Subscribe</button>
-                                                    </div>
-												</div>
-                                            </div>
-                                        </div>
-
-										<div class="row hideme" id="gatask_4">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">Congrats!! You have enrolled in our</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Giveaway</h2>
-                                                <div class="team-carousel-tabs">
-                                                    <div class="team-carousel-tabs__content tab-content">
-                                                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
-                                                            <div class="match-score">
-                                                                <div class="match-score__header">
-                                                                    <div class="match-score__competition">If any information given was wrong please do immediately mail us at <a href="mailto:giveaway@xntrixgaming.online" class="whiteinput">giveaway<span class="color-primary">@</span>xntrixgaming.online</a></div>
-                                                                    <div class="match-score__date">Giveaway Token ID : <span id="ga_tid" class="color-primary"></span></div>
-                                                                </div>
-                                                                <div class="match-score__body">
-                                                                    <div class="player-info-detail">
-																		<div class="player-info-detail__label">Name</div>
-																		<div class="player-info-detail__title" id="ga_name"></div>
-																	</div>
-																	<div class="player-info-detail">
-																		<div class="player-info-detail__label">PUBG ID</div>
-																		<div class="player-info-detail__title" id="ga_pid"></div>
-																	</div>
-																	<div class="player-info-detail">
-																		<div class="player-info-detail__label">Instagram ID</div>
-																		<div class="player-info-detail__title" id="ga_iid"></div>
-																	</div>
-                                                                </div>
-                                                                <div class="match-score__footer">																	
-                                                                </div>
-                                                            </div>
-                                                        </div>                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>   
-                                </div>
-                        </div>
+			<main class="site-content" id="wrapper">
+                <div class="widget-area widger-area--before-loop">
+                    <div class="widget widget-carousel slick-slider">
+                        <article class="widget-carousel__item player bg-image bg--ph-03">                            
+                            <div class="home_sidebar_xg">
+							<div class="player__thumbnail">
+                                <img src="assets/img/xglogo.png"alt="" />
+                            </div>
+							<div class="player__subtitle h6"><b>Welcome To</b></div>
+                            <h1 class="player__title h3 theme_green glow_text">XNTRIX GAMING</h1>
+                            <div class="player__body">
+                                <div class="h5 theme_blue_s">Let's Uphold&nbsp;<span class="theme_green theme_blue_s">E-Sports</span>&nbsp;Uprising</div>
+                            </div>
+							</div>
+                            <!-- Decoration -->
+                            <div class="ncr-page-decor">
+                                <div class="ncr-page-decor__layer-1"><div class="ncr-page-decor__layer-bg"></div></div>
+                                <div class="ncr-page-decor__layer-2"></div>
+                                <div class="ncr-page-decor__layer-3"><div class="ncr-page-decor__layer-bg"></div></div>
+                                <div class="ncr-page-decor__layer-4"></div>
+                                <div class="ncr-page-decor__layer-5"></div>
+                                <div class="ncr-page-decor__layer-6"></div>
+                            </div>
+                        </article>                       
                     </div>
-                </div>
-                <div class="team-player team-player--slider-wrapper">
-                    <div class="team-player__slider js-team-player__slider">
-                        <div class="team-player__slide team-player__slide--category-1">
-                            <div class="team-player__slide-inner">
-                                <div class="team-player__slide-decor">
-                                    <div class="team-player__slide-line-1"></div>
-                                    <div class="team-player__slide-line-2"></div>
+                </div>	
+				<div class="site-content__inner">
+                    <div class="site-content__holder">
+                        <h1 class="page-title h3">Faqs<span class="color-success">?</span></h1>
+                        <div class="page-content">
+                            <div class="accordion" id="accordionFaqs">
+                                <div class="accordion-item">
+                                    <div class="accordion-item__header" id="headingOne">
+                                        <button class="accordion-item__link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Can I enroll for the Giveaway multiple times? <span class="accordion-item__icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionFaqs">
+                                        <div class="accordion-item__body">
+                                            Yes! You can enroll for the Giveaway multiple times. You can enroll only once using an Gmail ID. To enroll again ensure that you use a new different Gmail ID to login to our website. You should use the same details like your
+											Name, Instagram ID and PUBG ID. You will get a different Giveaway Token ID each time you enroll with a new Gmail ID. More Token ID's increases the chance of your winning.
+                                        </div>
+                                    </div>
                                 </div>
-                                <img src="assets/img/xglogo.png" alt="XNTRIX GAMING" class="sidebar_xg_img" />
-                                <div class="team-player__slide-meta-holder">
-                                    <div class="team-player__slide-meta">
-                                        <h4 class="team-player__slide-subtitle h6 color-primary">E-SPORTS & STREAMING</h4>
-                                        <h3 class="team-player__slide-title">XNTRIX GAMING</h3>
-                                        <!-- <a href="aboutus.html" class="team-player__slide-link link-plus"></a> -->
+                                <div class="accordion-item">
+                                    <div class="accordion-item__header" id="headingTwo">
+                                        <button class="accordion-item__link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Should I use the same Gmail ID linked with my PUBG Account? <span class="accordion-item__icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionFaqs">
+                                        <div class="accordion-item__body">
+                                            No, You can use any Gmail ID of yours. Only Gmail IDs(from Google) can be used to login to our website. No Email IDs from other email service providers can be used to login.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item__header" id="headingThree">
+                                        <button class="accordion-item__link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            If I have already won any Previous Giveaways, am I eligible for further Giveaways? <span class="accordion-item__icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionFaqs">
+                                        <div class="accordion-item__body">
+                                            Yes! You are eligible even if you are one of our previous Giveaway Winners. Feel free to try your luck again dear Gamer.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item__header" id="headingFour">
+                                        <button class="accordion-item__link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            Can I share this Giveaway link to my friends? <span class="accordion-item__icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionFaqs">
+                                        <div class="accordion-item__body">
+                                            Yes! Feel free to share the joy of using XNTRIX GAMING and let your friends too become a part of our community. Open the Menu Tab by clicking on this icon(≡) on top right in Mobile Devices
+											and on bottom right in Desktops. Then click on the Share button and choose any platform from the list through which you can instantly share our website to your friends without any hustle.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-item__header" id="headingFive">
+                                        <button class="accordion-item__link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                            If I already have Royale Pass(RP) in my PUBG account, will I get the Giveaway Prize?(Applicable to the Current Giveaway) <span class="accordion-item__icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionFaqs">
+                                        <div class="accordion-item__body">
+                                            Yes, Indeed! If you are the winner of our Giveaway and you already have Royale Pass(RP), then an Unknown Cash(UC) worth the prize of Royale Pass(RP) will be gifted to the account corresponding
+											to your registered PUBG ID in the Giveaway Enrollment.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
-                </div>
+                </div>				
             </main>
             <!-- Overlay -->
             <div class="site-overlay"></div>
@@ -314,11 +197,11 @@
                             <!-- Mobile Navigation -->
                             <nav class="mobile-nav">
                                 <ul class="mobile-nav__list">                                    
-                                    <li class=""><a href="home.html">Home</a></li>
-                                    <li class=""><a href="aboutus.html">About Us</a></li>
+                                    <li class=""><a href="index.html">Home</a></li>
+                                    <!-- <li class=""><a href="aboutus.html">About Us</a></li> -->
                                     <li class=""><a href="giveaway.html">Giveaway</a></li>
-                                    <li class=""><a href="faq.html">FAQs</a></li>
-                                    <li class=""><a href="contactus.html">Contact Us</a></li>
+                                    <li class=""><a href="#">FAQs</a></li>
+                                    <!-- <li class=""><a href="contactus.html">Contact Us</a></li> -->
                                     </li>
                                 </ul>
                             </nav>
@@ -393,14 +276,14 @@
                         <!-- </div> -->
                     <!-- </li> -->
                     <li class="mobile-bar-item"><a class="mobile-bar-item__header" href="giveaway.html">Giveaway</a></li>
-                    <li class="mobile-bar-item"><a class="mobile-bar-item__header hideme" id="logout_btn_mob" onclick="signOut();">Logout&nbsp;&nbsp;&nbsp;<svg role="img" style="height:15px;width:15px;"class="df-icon df-icon--logout"><use xlink:href="assets/img/allsvg.svg#logout"></use></svg></a></li>
+                    <li class="mobile-bar-item"><a class="mobile-bar-item__header hideme hover_pointer" id="logout_btn_mob" onclick="signOut();">Logout&nbsp;&nbsp;&nbsp;<svg role="img" style="height:15px;width:15px;"class="df-icon df-icon--logout"><use xlink:href="assets/img/allsvg.svg#logout"></use></svg></a></li>
                 </ul>                
                 <div class="menu-panel__content d-none d-md-flex">
                     <div class="menu-panel__navigation">
                         <div id="dl-menu" class="dl-menuwrapper">
                             <!-- <button class="dl-trigger">Open Menu</button> -->
                             <ul class="dl-menu dl-menuopen">
-                                <li class=""><a href="home.html">Home</a></li>
+                                <li class=""><a href="index.html">Home</a></li>
                                 <li class="">
                                     <a href="#">Social Medias</a>
                                     <ul class="dl-submenu">                                        
@@ -417,7 +300,7 @@
                                 </li>
 								<!-- <li class=""><a href="index.html">About Us</a></li> -->
 								<!-- <li class=""><a href="index.html">Giveaway</a></li> -->
-								<!-- <li class=""><a href="index.html">FAQs</a></li> -->
+								<li class=""><a href="#">FAQs</a></li>
 								<!-- <li class=""><a href="index.html">Contact Us</a></li> -->
 								<li class="">
                                     <a href="#">Share Page</a>
@@ -541,11 +424,11 @@
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/core.js"></script>
 		<!-- CUSTOM -->
-        <script src="assets/js/ga.js"></script>
 		<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 		<script src="assets/js/subchecker.js"></script>
         <!-- Vendor JS --><!-- Template JS -->
         <script src="assets/js/init.js"></script>
+        <script src="assets/js/custom.js"></script>
         <!-- Duotone SVG color filter -->
         <svg xmlns="http://www.w3.org/2000/svg" class="svg-filters">
             <filter id="duotone_base">

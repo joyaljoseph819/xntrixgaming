@@ -295,6 +295,10 @@ body:not(.cursor-is--active) .slick-dots li {
 	#subscribe_btn{
 		margin-left:-100px;
 	}
+	.sidebar_xg_img{
+		left: -30%;
+		height:90%;
+	}
 }
 @media (max-width: 991.98px) {
     .sidebar_xg_img {
