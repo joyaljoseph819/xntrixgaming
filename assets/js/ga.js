@@ -1,5 +1,6 @@
 	var id;
 	var gn;
+	var eid;
 	function hide_log_info(){
 	  var ids = ['logged_status','logged_uname','logged_upic','logged_upic_frame']; 
 	  for(i in ids){
@@ -31,7 +32,7 @@
 	  reset_gaentry();
 	  show_log_info();	  
 	  enrollment(profile.getId(),'login');
-      // document.getElementById("uemail").innerHTML = 'Email: ' + profile.getEmail();
+      window.eid = profile.getEmail();
     }
     function onFailure(error) {
       console.log(error);
@@ -147,7 +148,7 @@ function gat_res(){
 		var fn = document.getElementById("yourname").value;
 		var i = document.getElementById("iid").value;
 		var p = document.getElementById("pid").value;
-        http.open("GET", "https://process.xntrixgaming.online/process/ga_enroll.php?id="+window.id+"&gn="+window.gn+"&fn="+fn+'&i='+i+'&p='+p, true);
+        http.open("POST", "https://process.xntrixgaming.online/process/ga_enroll.php", true);
         http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http.onreadystatechange = function()
         {
@@ -155,11 +156,11 @@ function gat_res(){
 				enrollment(window.id,'success');
 			}
 		}
-        http.send();	
+        http.send("id="+window.id+"&gn="+window.gn+"&eid="+window.eid+"&fn="+fn+'&i='+i+'&p='+p);	
 }
 function enrollment(id,type){
 	var http1 = new XMLHttpRequest();
-        http1.open("POST", 'https://process.xntrixgaming.online/process/check_enroll.php?id='+id, true);
+        http1.open("POST", 'https://process.xntrixgaming.online/process/check_enroll.php', true);
         http1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http1.onreadystatechange = function()
         {
@@ -179,7 +180,7 @@ function enrollment(id,type){
 						openmodale('Congrats '+window.gn+'! <br> You are Enrolled!');
 					}
 					var http2 = new XMLHttpRequest();
-						http2.open("GET", 'https://process.xntrixgaming.online/process/enroll_det.php?id='+id, true);
+						http2.open("POST", 'https://process.xntrixgaming.online/process/enroll_det.php', true);
 						http2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 						http2.onreadystatechange = function()
 						{
@@ -193,12 +194,12 @@ function enrollment(id,type){
 								}
 							}
 						}
-						http2.send();
+						http2.send('id='+id);
 				}
 				
 			}
 		}
-        http1.send();
+        http1.send('id='+id);
 }
 function live_fc(){
         var http1 = new XMLHttpRequest();
