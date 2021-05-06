@@ -45,8 +45,8 @@
                     <ul class="main-nav__list">
 						<li class=""><a class="hover_pointer" href="home.html">Home</a></li>                        
 						<li class=""><a class="hover_pointer" href="aboutus.html">About Us</a></li>                        
-						<li class=""><a class="hover_pointer" href="#" class="theme_green">Giveaway</a></li>
-						<li class=""><a class="hover_pointer" href="faqs.html">FAQs</a></li>                        
+						<li class=""><a class="hover_pointer" href="#" class="theme_green">Community</a></li>
+						<!-- <li class=""><a class="hover_pointer" href="faqs.html">FAQs</a></li>                         -->
 						<!-- <li class=""><a class="hover_pointer" href="#">Contact Us</a></li>       -->
                     </ul>
                 </nav>
@@ -89,192 +89,30 @@
                 <div class="container container--large">
                     <div class="row ml-5">
                         <div class="col-lg-7">                            
-                                <div class="gatask_list">									
-									<ul id="task_dots" class="slick-dots hideme" role="tablist">
-										<li class="slick-active" id="gatask1" onclick="toggle_gatask('gatask_1');">1</li>
-										<li class="" id="gatask2">2</li>
-										<li class="" id="gatask3">3</li>
-										<li class="" id="gatask4">4</li>										
-									</ul>
-									<ul id="task_dots_login" class="slick-dots" role="tablist">
-										<li class="slick-active" onclick="openmodale('Please Login With Google To Continue');">1</li>
-										<li class="" onclick="openmodale('Please Login With Google To Continue');">2</li>
-										<li class="" onclick="openmodale('Please Login With Google To Continue');">3</li>
-										<li class="" onclick="openmodale('Please Login With Google To Continue');">4</li>										
-									</ul>
+                                <div class="gatask_list">
                                     <div class="team-carousel__item" data-icon="team-overview">
                                         <div class="row" id="gatask_1">
                                             <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">ENROLL FOR FREE IN OUR</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Giveaway</h2>
-                                                <div class="row">
-                                                    <div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">
-                                                            <div class="player-info-detail__label">GAME</div>
-                                                            <div class="player-info-detail__title">PUBG MOBILE</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">
-                                                            <div class="player-info-detail__label">PRIZE</div>
-                                                            <div class="player-info-detail__title">ROYALE PASS (RP)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-xl-4">
-                                                        <div class="player-info-detail">
-                                                            <div class="player-info-detail__label">Prize worth	</div>
-                                                            <div class="player-info-detail__title color-primary">₹ 800 /-</div>
-                                                        </div>
-                                                    </div>
+                                                <h3 class="player-info-subtitle h4 text-uppercase">Join our community</h3>
+                                                <h2 class="player-info-title h1 text-uppercase">Follow Us</h2>
+                                                <div class="row">                                                    
 													<div class="col-6 col-md-6 col-xl-4">
                                                         <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="yourname_div">Enter Your Name</div>
+                                                            <div class="player-info-detail__title" id="yourname_div">Enter Your Instagram ID</div>
 															<input class="form-control whiteinput" id="yourname" onkeyup="yourname_check_login()"></input>
                                                         </div>
                                                     </div>
-													<div class="col-6 col-md-6 col-xl-4">														
-                                                        <div id="gat_n1" class="player-info-detail hideme">
-                                                            <button class="btn btn-check" onclick="toggle_gatask('gatask_2');gat_comp('gatask1')">Next</button>
-                                                        </div>
+													<div class="col-6 col-md-6 col-xl-4">					
 														<div id="gat_n1_login" class="player-info-detail hideme">
-                                                            <button class="btn btn-check" onclick="openmodale('Please Login With Google To Continue');">Next</button>
+                                                            <button class="btn btn-check" onclick="openmodale('Thank You!!You are one of our valuable Followers!!');">Next</button>
                                                         </div>
                                                     </div>
 													<p>
-                                                  You will be eligible to participate in the Giveaway once you have successfully completed these procedures.<br> Multiple entries from same user is valid. Ensure that you login with a new <span class="theme_green">Email ID</span> to enroll and increase your chance to be the winner. Same <span class="theme_green">Instagram ID</span> and <span class="theme_green">PUBG ID</span> can be used to enroll again.
-												  <p id="ga_tc" class="f_10 theme_green">*T&C Applies.</p>
+                                                  Check If you are one of our valuable follower</p>
 												 </p>
                                                 </div>                                                
                                             </div>
                                         </div>
-							
-										<div class="row hideme" id="gatask_2">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">Our Social Media Strength</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Live Count</h2>
-                                                <div class="row row-mb-balance">
-                                                    <div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="ig_lc1"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">INSTAGRAM</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-instagram"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="yt_lc1"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">YOUTUBE</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-youtube"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>													
-                                                </div>
-												<div class="row row-mb-balance">                                                    
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="iid_div">Instagram ID</div>
-															<input class="form-control whiteinput" id="iid" onkeyup="id_check()"></input>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail">                                                            
-                                                            <div class="player-info-detail__title" id="pid_div">PUBG ID</div>
-															<input class="form-control whiteinput" id="pid" onkeyup="id_check()"></input>
-                                                        </div>
-                                                    </div>
-													
-													<div id="gat_n2" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="toggle_gatask('gatask_3');gat_comp('gatask2');">Next</button>
-                                                    </div>
-												</div>
-                                            </div>
-                                        </div>
-
-										<div class="row hideme" id="gatask_3">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">You Are Our Strength Dear</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Subscribers</h2>
-                                                <div class="row row-mb-balance">
-                                                    <div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="ig_lc2"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">INSTAGRAM</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-instagram"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                        <div class="player-info-detail player-info-detail--value">
-                                                            <div class="player-info-detail__value h3" id="yt_lc2"></div>
-                                                            <div class="player-info-detail__body">
-                                                                <div class="player-info-detail__label">YOUTUBE</div>
-                                                                <div class="player-info-detail__title"><i class="fab fa-youtube"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>													
-                                                </div>
-												<div class="row row-mb-balance">                                                    
-													<div class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                         <div class="player-info-detail">
-                                                            <div class="player-info-detail__label" id="f_query1">Are You One Of Our Valuable	</div>
-                                                            <div class="player-info-detail__title color-primary" id="f_query2">Subscriber?</div>
-                                                        </div>
-                                                    </div>
-													<div id="subchecker_div_login" class="col-6 col-md-4 col-lg-6 col-xl-4">
-                                                         <button class="btn btn-check" onclick="openmodale('Please Login With Google To Continue');">Check!</button>
-                                                    </div>
-													<div id="subchecker_div" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="ytPerm()" id="subchecker_btn"><i id="subcheck_i" class="f_10 fa fa-spinner fa-spin checking"></i><span id="subcheck_s">Check!</button>
-                                                    </div>
-													<div id="gat_n3" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme">
-                                                         <button class="btn btn-check" onclick="toggle_gatask('gatask_4');gat_comp('gatask4');gat_res();">Next</button>
-                                                    </div>
-													<div id="subscribe_btn" class="col-6 col-md-4 col-lg-6 col-xl-4 hideme" style="z-index:10;">
-                                                         <button class="btn btn-youtube" onclick="window.open('https://www.youtube.com/channel/UCAzoxc0OVXWJ5aXRAcr7EdA')"><i class="fab fa-youtube"></i>Subscribe</button>
-                                                    </div>
-												</div>
-                                            </div>
-                                        </div>
-
-										<div class="row hideme" id="gatask_4">
-                                            <div class="col-lg-11">
-                                                <h3 class="player-info-subtitle h4 text-uppercase">Congrats!! You have enrolled in our</h3>
-                                                <h2 class="player-info-title h1 text-uppercase">Giveaway</h2>
-                                                <div class="team-carousel-tabs">
-                                                    <div class="team-carousel-tabs__content tab-content">
-                                                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
-                                                            <div class="match-score">
-                                                                <div class="match-score__header">
-                                                                    <div class="match-score__competition">If any information given was wrong please do immediately mail us at <a href="mailto:giveaway@xntrixgaming.online" class="whiteinput">giveaway<span class="color-primary">@</span>xntrixgaming.online</a></div>
-                                                                    <div class="match-score__date">Giveaway Token ID : <span id="ga_tid" class="color-primary"></span></div>
-                                                                </div>
-                                                                <div class="match-score__body">
-                                                                    <div class="player-info-detail">
-																		<div class="player-info-detail__label">Name</div>
-																		<div class="player-info-detail__title" id="ga_name"></div>
-																	</div>
-																	<div class="player-info-detail">
-																		<div class="player-info-detail__label">PUBG ID</div>
-																		<div class="player-info-detail__title" id="ga_pid"></div>
-																	</div>
-																	<div class="player-info-detail">
-																		<div class="player-info-detail__label">Instagram ID</div>
-																		<div class="player-info-detail__title" id="ga_iid"></div>
-																	</div>
-                                                                </div>
-                                                                <div class="match-score__footer">																	
-                                                                </div>
-                                                            </div>
-                                                        </div>                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                     </div>   
                                 </div>
                         </div>
